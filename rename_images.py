@@ -27,7 +27,3 @@ def rename():
     df["label"] = labels
     df.to_csv("dataset.csv", index=False)
 
-if __name__ == "__main__":
-    for i in range(32):
-        im = f"plots/scatter_plots/unsup/unsup lr = 0.0001, 0 {i}.png"
-        

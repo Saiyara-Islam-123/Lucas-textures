@@ -20,4 +20,12 @@ def merge(im1, im2, title, loc):
 
 if __name__ == "__main__":
 
-    merge("", "", "", "")
+    merge(f"plots/blue-green/Lr=0.001 0.png", f"plots/scatter_plots/no_training.png", f"no_train",
+          "plots/combined")
+
+    for i in range(32):
+        merge(f"plots/blue-green/Lr=0.001 {i+1}.png", f"plots/scatter_plots/unsup lr = 0.0001, 0 {i}.png", f"unsup {i}", "plots/combined")
+
+
+    for i in range(32):
+        merge(f"plots/blue-green/Lr=0.001 {i+33}.png", f"plots/scatter_plots/sup lr = 0.001, 0 {i}.png", f"z sup {i}", "plots/combined")

@@ -12,15 +12,15 @@ def plot_batch(time_step, csv_unsup, csv_sup, num_unsup_rows, num_sup_rows, lr, 
     df_sup = df_sup.head(num_sup_rows)
 
 
-    accs = df_sup["acc"]
+    accs = df_sup["acc"].to_list()
     df_sup.drop(columns=["acc"], inplace=True)
 
-    df_whole = pd.concat([df_no_train, df_unsup , df_sup])
+    df_whole = pd.concat([df_no_train, df_unsup, df_sup])
     x = []
-    for k in range(num_unsup_rows+num_sup_rows+1):
+    for k in range(num_unsup_rows + num_sup_rows + 1):
         x.append(k)
     x2 = []
-    for k in range(num_unsup_rows+1, num_unsup_rows+num_sup_rows+1):
+    for k in range(num_unsup_rows + 1, num_unsup_rows + num_sup_rows + 1):
         x2.append(k)
 
     fig, ax1 = plt.subplots()
@@ -48,4 +48,4 @@ def plot_batch(time_step, csv_unsup, csv_sup, num_unsup_rows, num_sup_rows, lr, 
 if __name__=="__main__":
 
     for i in range(0, 65):
-        plot_batch(time_step=i, csv_unsup="LR=0.001, Distance every batch unsup.csv", csv_sup="LR=0.001, Distance every batch sup", num_unsup_rows=32, num_sup_rows=32, lr=0.001, loc="plots/blue-green/")
+        plot_batch(time_step=i, csv_unsup="LR=0.001, Distance every batch unsup.csv", csv_sup="LR=0.005, Distance every batch sup", num_unsup_rows=32, num_sup_rows=32, lr=0.001, loc="plots/blue-green/")

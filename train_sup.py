@@ -135,4 +135,4 @@ if __name__ == "__main__":
     sup_net.to(device)
 
     # Train the supervised model
-    train_supervised(sup_net, trainloader, device, epochs=1, lr=0.001)
+    train_supervised(sup_net, trainloader, device, epochs=1, lr=0.005)
